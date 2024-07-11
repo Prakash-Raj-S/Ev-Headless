@@ -1,0 +1,310 @@
+.dna-wrapper{
+    .dna-section{
+        width: 100%;
+        height: calc(100vh - 77px);
+        object-fit: fill;
+        // overflow-y: scroll;
+  //        scrollbar-width: thin;
+  // scrollbar-color: #21ADE4 #0A0506;
+        // z-index: 5;
+   
+        // z-index: -1;
+        //  height: 2000px;
+        // padding: 56px 116px;
+    //    background-image: url(../../images/backgrounds/dna-bg.png); 
+    //    background-position: center;
+    //    background-size: cover;
+    //    background-color: #0A0506;
+    &.active{
+           inset: auto;
+    margin: 0px;
+    display: block;
+    position: relative;
+    box-sizing: content-box;
+    min-height: 900px;
+    height: 900px;
+    padding-top: 1px;
+    padding-bottom: 2499px;
+    .video-group{
+      position: fixed;
+    margin: auto;
+    inset: 0px auto auto 0px;
+    box-sizing: border-box;
+    width: 1436px;
+    }
+}
+    
+  
+    .video-group{
+      position: relative;
+      width: 100vw;
+      // height: 500vh;
+      height: 100vh;
+     
+      video{
+        width: 100%;
+  height: 100%;
+  height: 100vh;
+
+  // max-height: 100%;
+  // position: fixed;
+  // position: absolute;
+  top: 0;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  object-fit: cover;
+  // display: none;
+  // &.active{
+  //   display: block;
+  // }
+      }
+    }
+//    #set-height {
+//   display: block;
+//   height: 300vh;
+// }
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+  .background-container {
+  position: fixed;
+  display: flex;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+//   top: 76px;
+}
+.video-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  object-fit: fill;
+}
+#bgVideo {
+  flex: 1;
+  background-color: #000;
+  opacity: 1;
+  visibility: visible;
+}
+      
+    }
+    .scroll-container {
+  overflow: hidden;
+  min-width: 100% !important;
+   height: 100vh; /* Ensure the container takes the full viewport height */
+  // overflow: hidden;
+  .step {
+  
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+ transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+ 
+  &.visible{
+    //  opacity: 1;
+    // animation: fadeOutDown 1s forwards;
+animation: fadeInUp 1s forwards;
+position: fixed;
+  }
+  .head-wrapper{
+   top:32px;
+    h6{
+      @include phone{
+        font-size: 24px;
+      }
+    }
+  }
+}
+}
+      .head-wrapper{
+            gap: 24px;
+            top: 130px;
+            
+           h6{
+            br{
+              display: none;
+            }
+           }
+            @include phone{
+              top: 36px;
+              align-items: center;
+              padding-inline: 24px;
+              gap: 16px;
+              h6{
+            br{
+              display: flex;
+            }
+           }
+              p{
+                font-size: 16px;
+                line-height: 150%;
+              }
+            }
+            p{
+                color: #ADADAD;
+            }
+        }
+        .description-wrapper{
+            border-radius: 4px;
+border: 1px solid rgba(255, 255, 255, 0.3019607843);
+background: radial-gradient(107.47% 149.72% at 0% 0%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+box-shadow: -5px -5px 250px 0px rgba(255, 255, 255, 0.02) inset;
+backdrop-filter: blur(21px);
+-webkit-backdrop-filter: blur(21px); /* Safari support */
+padding: 24px;
+// width: 40%;
+    bottom: 18%;
+    left: 8%;
+    z-index: 4;
+    max-width: 410px;
+    min-width: 410px;
+    max-height: 168px;
+    min-height: 168px;
+
+            p{
+              color: #ECECEC;
+margin-bottom: 0;
+            }
+            @include phone{
+              border-radius: unset;
+              border: unset;
+              background: unset !important;
+              box-shadow: unset !important;
+              backdrop-filter: unset !important;
+              left: unset;
+              width: 100%;
+              -webkit-backdrop-filter: unset;
+              // position: unset !important;
+              font-size: 16px;
+              max-width: unset;
+              min-width: unset;
+              bottom: 16%;
+              p{
+                text-align: center;
+                font-size: 16px;
+                span{
+                  font-size: 16px;
+                }
+              }
+            }
+        }
+
+            .dna-cta-wrapper{
+                bottom: 90px;
+                z-index: 4;
+             cursor: default;
+                transition: all 0.3s ease;
+                 &:hover{
+                  .dna-cta{
+                    .dna-svg-container{
+                  svg{
+                    g{
+                        path{
+                          stroke: #fff;
+                          stroke-width: 0.7px;
+                        }
+                    }
+                  }
+                }
+                }
+    &::before{
+  animation: dnaLeft 0.5s forwards;
+  @include phone{
+    animation: mobDnaLeft 0.5s forwards;
+  }
+    }
+    &::after{
+  animation: dnaRight 0.5s forwards;
+   @include phone{
+    animation: mobDnaRight 0.5s forwards;
+  }
+    }
+}
+                @include phone{
+                  svg{
+                    width: 13.32px;
+                    height: 38.75px;
+                  }
+                }
+                 &::before{
+    position: absolute;
+    content: url(../../images/dna/dna-cta-left.svg);
+    left: -16px;
+    top: -4px;
+    @include phone{
+       content: url(../../images/dna/dna-mob-left.svg);
+       top: -5px;
+       left: -10px;
+        animation: mobDnaLeft 1.5s infinite alternate;
+    }
+  }
+    &::after{
+    position: absolute;
+    content: url(../../images/dna/dna-cta-right.svg);
+    right: -16px;
+    top: -4px;
+    @include phone{
+       content: url(../../images/dna/dna-mob-right.svg);
+       top: -5px;
+       right: -10px;
+        animation: mobDnaRight 1.5s infinite alternate;
+    }
+  }
+               .dna-cta{
+                gap: 4px;
+                @include phone{
+                  p{
+                    font-size: 14px;
+                  }
+                  svg{
+                    width: 35.84px;
+height: 32px;
+                  }
+                }
+               }
+               
+            }
+            .range-wrapper{
+              right: 0;
+              top: 0;
+              height: 100%;
+              background-color: #0A0506;
+              width: 6px;
+              position: fixed !important;
+              display: none;
+              @include phone{
+                width: 4px;
+              }
+              &.active{
+                display: block;
+                z-index: unset !important;
+              }
+              .range{
+               border-radius: 43px;
+// background: linear-gradient(180deg, #21ADE4 65.5%, rgba(10, 5, 6, 0.00) 81%);
+background-color: #21ADE4;
+                height: 30%;
+               
+              }
+            }
+}
+
+
+

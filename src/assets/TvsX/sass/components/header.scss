@@ -1,0 +1,93 @@
+.newHeader{
+    background-color: #050707;;
+    .top-nav-wrapper{
+        padding: 18px 80px !important;
+        @include tablet-portrait{
+            padding: 18px 40px !important;
+        }
+ @include for-tablet-only{
+            display: none !important;
+        }
+        @include phone{
+            display: none !important;
+        }
+        .top-nav-left{
+            gap: 32px;
+        }
+        .top-nav-right{
+            gap: 32px;
+           
+            .logo2{
+                width: 106px;
+height: 23px;
+
+@include phone{
+    display: none;
+}
+            }
+        }
+        .top-nav-logo{
+          width: 128px;
+height: 25.497px;
+        }
+        .top-nav-menus{
+            margin-left: 24px;
+            gap: 24px;
+             @include for-tablet-only{
+                display: none !important;
+            }
+            @include phone{
+                display: none !important;
+            }
+}
+        }
+        .cta-wrapper{
+            gap: 16px;
+             @include tablet-portrait{
+    display: none !important;
+}
+             @include for-tablet-only{
+                display: none !important;
+            }
+            @include phone{
+                display: none !important;
+            }
+            p{
+                padding-right: 16px;
+                border-right: 1px solid #fff;
+                &:last-child{
+                    padding-right: unset;
+                    border-right: unset;
+                }
+            }
+        }
+        .profile-section-wrapper{
+           gap: 16px;
+        }
+        .mob-header{
+            display: none;
+            @include for-tablet-only{
+                display: flex;
+                padding: 16px 20px ;
+                .left-wrapper{
+                    gap: 16px;
+                    .top-nav-logo{
+                        width: 121.714px;
+height: 24px;
+                    }
+                }
+            }
+            @include phone{
+                display: flex;
+                padding: 16px 20px ;
+                .left-wrapper{
+                    gap: 16px;
+                    .top-nav-logo{
+                        width: 121.714px;
+height: 24px;
+                    }
+                }
+            }
+        }
+    
+}

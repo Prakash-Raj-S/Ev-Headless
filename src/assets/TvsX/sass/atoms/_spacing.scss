@@ -1,0 +1,21 @@
+@import "_breakpoints.scss";
+
+.left-container {
+	padding-left: 140px;
+	@include for-tablet-only {
+		padding-left: 40px;
+	}
+	@include phone {
+		padding-left: 16px;
+	}
+}
+
+.right-container {
+	padding-right: 140px;
+	@include for-tablet-only {
+		padding-right: 40px;
+	}
+	@include phone {
+		padding-right: 16px;
+	}
+}

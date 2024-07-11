@@ -1,0 +1,383 @@
+section{
+    &.brain-section{
+        background-color: #0A0506;
+        padding-top: 100px;
+        position: relative;
+        z-index: 2;
+        padding-bottom: 0px;
+        gap: 56px;
+        // max-height: calc(100vh - 60px);
+        // @include phone{
+        //     height: calc(100vh - 58px);
+        // }
+        @include for-tablet-only{
+            padding-bottom: 0px;
+        }
+        @include phone{
+            padding-top: 60px;
+            gap: 28px;
+            padding-bottom:60px;
+            
+        }
+        .head-wrapper{
+            gap: 24px;
+            opacity: 0;
+            transform: translateY(20px); /* Start from below */
+    transition: opacity, transform 1.5s ease; 
+            &.active{
+            animation: brainHeadUp 1.5s ease forwards;
+            }
+            h6{
+                br{
+                    display: none;
+                }
+            }
+            @include for-tablet-only{
+                padding-inline: 42px;
+                p{
+                    br{
+                        display: none;
+                    }
+                }
+            }
+            @include phone{
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+                padding-inline: 12px;
+
+                p{
+                    font-size: 16px;
+                    line-height: 150%;
+                }
+                h6{
+                     br{
+                display: none;
+                @include phone{
+                    display: block;
+                }
+            }
+                }
+            }
+            p{
+                color: #ADADAD;
+            }
+           
+        }
+        .dashboard-wrapper{
+
+            .dashboard-image-wrapper{
+                position: relative;
+    overflow: hidden;
+   max-height: 650px;
+    height: 650px;
+    align-items: center;
+    @include phone{
+        width: 100%;
+    }
+  
+
+    img{
+        max-height: 580px;
+        transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+  height: 580px;
+     &.fade-out{
+    opacity: 0;
+  }
+  @include phone{
+    height: 200px;
+    object-fit: cover;
+  }
+ 
+    }
+
+    @include for-tablet-only{
+      max-height: 456px;
+        height: 100%;
+        min-height: 456px;
+        img{
+            max-height:330px;
+        }
+    }
+    @include phone{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 42px;
+        // max-height: 550px;
+        // height: 550px;
+        max-height: unset;
+        height: unset;
+        justify-content: flex-start;
+    }
+                img{
+                    width: 100% !important;     
+                    transition: all 1s ease;
+                     &.zoom-in {
+  animation: zoom-in-right 1s forwards;
+  @include for-tablet-only{
+  animation: zoom-in-right-tab 1s forwards;
+  }
+// transform: scale(1.1) translateX(90px) !important;
+}
+ 
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s;
+}
+&.zoom-out{
+  animation: zoom-out 1s forwards;
+}
+                }
+                &.pointer-wrapper{
+                    display: flex;
+                    // margin-top: 48px;
+                    justify-content: flex-end;
+                    img{
+                        width: 100% !important;
+                    }
+                }
+                .brain-slider-wrapper{
+                  opacity: 0;
+                    max-width: 400px;
+                    width: 100%;
+                    padding: 24px;
+                    max-height: 250px;
+                    border-radius: 4px;
+                    border: 1px solid rgba(255, 255, 255, 0.3019607843);
+                    background: radial-gradient(103.38% 130.74% at 0% 0%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+                    box-shadow: -5px -5px 250px 0px rgba(255, 255, 255, 0.02) inset;
+                    backdrop-filter: blur(21px);
+                    -webkit-backdrop-filter: blur(21px); /* Safari support */
+                    @include phone{
+                        // display: block;
+                    transition: all 1s ease;
+
+                        position: relative;
+                        max-width: calc(100vw - 32px);
+                        padding: 16px;
+                        min-height: 209px;
+                        max-height: 209px;
+                        
+                    }
+
+                     &.active{
+                        opacity: 1;
+                         min-height: 250px;
+                    position: absolute;
+                    left: 5%;
+                    top: 44%;
+                    z-index: 10;
+                    @include phone{
+                        min-height: 209px;
+                        position: unset;
+                        left: unset;
+                        top: unset;
+                    }
+                     }
+                     .brain-slider{
+
+             .slick-dots{
+                display: none !important;
+             }
+                    .card{
+                        min-width: 350px;
+                        width:350px ;
+                        background: transparent;
+                        gap: 8px;
+                        border: unset;
+                        @include phone{
+                          min-width: 310px !important;
+                        //   max-width: 350px !important;
+                        width:calc(100vw - 64px) ;   
+                        }
+                        @include for-small-phone-only{
+                            min-width: unset !important;
+                            // width: unset !important;
+                        }
+                      
+                        .card-head{
+                            gap: 12px;
+                            @include phone{
+                                gap: 8px;
+                                svg{
+                                    width: 24px;
+                                    height: 24px;
+                                }
+                                p{
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                        .description{
+                          color: #ADADAD;
+                         padding-bottom: 16px;
+                         border-bottom: 1px solid #343434;
+                         min-height: 112px;
+                         @include phone{
+                            font-size: 14px;
+                            padding-right: 0 !important;
+                            max-height: 80px;
+                            max-width: 302px;
+                            min-height: 96px;
+                            span{
+                                font-size: 14px;
+                            }
+                         }
+                        }
+                    }
+                    .slick-arrow{
+                        position: absolute;
+                        bottom: -52px;
+                        z-index: 5;
+                        &:hover{
+                            .border-path{
+                                stroke-width: 1.5px;
+stroke: #FFF;
+                            }
+                        }
+                        @include phone{
+                        width: 35.84px;
+height: 32px;
+bottom: -46px;
+                        }
+                        &.slick-next{
+                            right: 0px;
+                        }
+                        &.slick-prev{
+                            left: 0px;
+                        }
+                        
+                    }
+                }
+                .brain-count{
+                    bottom: 12px;
+                    width:87%;
+                    display: flex;
+                    justify-content: center;
+                    @include for-tablet-only{
+                        bottom: 24px;
+                        p{
+                            margin-bottom: 0 !important;
+                        }
+                    }
+                    @include phone{
+                        bottom: 16px;
+                        p{
+                            margin-bottom: 0 !important;
+                            font-size: 14px;
+                            span{
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                    p{
+                        line-height: 124%;
+letter-spacing: 0.64px;
+color: #a5a5a5;
+span{
+    line-height: 124%; /* 24.8px */
+letter-spacing: 0.8px;
+}
+                    }
+                }
+                .close-button{
+                    top: 24px;
+                    right: 24px;
+                    cursor: pointer;
+                    @include phone{
+                        display: none;
+                    }
+                }
+            }
+            }
+//             .dashboard-img {
+//     opacity: 1;
+//     transition: opacity 0.3s ease;
+// }
+// .fade-out {
+//     opacity: 0;
+// }
+            .pointers{
+                opacity: 0;
+                transition: all 1.5s ease;
+                 width: 68px;
+                 display: flex;
+                 justify-content: center;
+                &.active{
+                    opacity: 1;
+                }
+                 &:hover{
+                   
+    display: flex;
+    justify-content: center;
+    &::before{
+    position: absolute;
+    content: url(../../images/brain/pointer-left.svg);
+    left: 0;
+  animation: moveLeft 0.5s forwards;
+    top: 0;
+    }
+    &::after{
+    position: absolute;
+    content: url(../../images/brain/pointer-right.svg);
+    right: 0;
+  animation: moveRight 0.5s forwards;
+    top: 0;
+    }
+  
+}
+                @include for-tablet-only{
+                    width: 60px;
+                }
+                @include phone{
+                    display: none !important;
+                }
+                &.one{
+                  left: 24%;
+                  @include for-tablet-only{
+                    top: 30%;
+                  }
+                }
+                &.two{
+                    top: 16%;
+    left: 46%;
+    @include for-tablet-only{
+        top: 20%;
+    }
+                }
+                &.three{
+                        bottom: 26%;
+    right: 42%;
+    @include for-tablet-only{
+        bottom: 45%;
+    }
+
+                }
+                &.four{
+                    right: 20%;
+    bottom: 60%;
+                }
+            }
+
+        }
+        .dark-overlay{
+            left: 0;
+            display: none;
+            background: linear-gradient(180deg, #0A0506 0%, rgba(10, 5, 6, 0.00) 100%);
+mix-blend-mode: multiply;
+height: 100%;
+width: 200px;
+            &.active{
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+section{
+    &.connected-section{
+        padding: 100px 80px;
+        gap: 56px;
+        background: #0A0506;
+        z-index:2;
+        position: relative;
+        @include for-tablet-only{
+            padding: 56px 24px;
+        }
+        @include phone{
+            padding: 20px;
+            gap: 32px;
+        }
+        .cards-wrapper{
+            gap: 16px;
+            @include for-tablet-only{
+                display: grid !important;
+                grid-template-columns: auto auto;
+                gap: 24px;
+            }
+            @include for-desktop-down{
+                display: grid !important;
+                grid-template-columns: auto auto;
+                gap: 24px;
+            }
+            @include phone{
+               overflow-x: scroll;
+               width: 100%;
+              display: flex !important;
+               align-items: flex-start !important;
+               justify-content: flex-start !important;
+               &::-webkit-scrollbar{
+                display: none;
+               }
+            }
+            .card{
+                padding: 23px;
+                gap: 8px;
+                border-radius: 4px;
+                border: 1px solid rgba(255, 255, 255, 0.3019607843);
+                background: #151619;
+                box-shadow: -5px -5px 250px 0px rgba(255, 255, 255, 0.02) inset;
+                backdrop-filter: blur(21px);
+                -webkit-backdrop-filter: blur(21px);
+                width: 304px;
+                height: 215px;
+                @include phone{
+                    width: 260px;
+                    min-width: 260px;
+                    height: 181px;
+                     min-height: 181px;
+                    padding: 16px 20px;
+                    .card-img{
+                        width: 40px;
+                        height: 40px;
+                    }
+                    
+                }
+                .card-img{
+                    margin-bottom: 8px;
+                    @include phone{
+                        margin-bottom: 4px;
+                    }
+                }
+                h6{
+                    @include phone{
+                        font-size: 18px;
+                    }
+                }
+                .card-desc{
+                    color: #ADADAD;
+                    @include phone{
+                        font-size: 14px;
+                        span{
+                            font-size: 14px;
+                        }
+                    }
+                    span{
+                        background: var(--Gradient-for-text, linear-gradient(182deg, #FFF 57.67%, rgba(255, 255, 255, 0.00) 106.8%));
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        
+                        // color:  #fff;
+                    }
+                }
+                // h6{
+                //     margin-bottom: 0 !important;
+                // }
+            }
+        }
+    }
+}

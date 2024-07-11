@@ -1,0 +1,158 @@
+.mf-cursor {
+    $root:&;
+    position:fixed;
+   top: -8%;
+    left: -8%;
+    z-index:150;
+    contain:layout style size;
+    pointer-events:none;
+    will-change:transform;
+    background: #485563;
+    transition:opacity 0.3s, color 0.4s;
+  width: 170.919px;
+height: 172.693px;
+// transform: rotate(47.058deg);
+// transform: rotate(47.058deg);
+fill: #687079;
+filter: blur(100px);
+border-radius: 301.046px;
+// filter: blur(125px);
+// display: none;
+ &:before {
+       content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+   width: 297.953px;
+height: 301.046px;
+    border: 1px solid transparent;
+   background: #485563;
+   border-radius: 301.046px;
+filter: blur(125px);
+    transform: scale(1);
+    // border-radius: 50%;
+    transition: transform 0.25s ease-in-out, opacity 0.1s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    display: none;
+    }
+&.-hidden{
+    display: none;
+}
+&.-text{
+    display: block;
+}
+   
+
+    &-text {
+        position:absolute;
+        top:-18px;
+        left:-18px;
+        width:36px;
+        height:36px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        transform:scale(0) rotate(10deg);
+
+        opacity:0;
+        color:white;
+
+        font-size:16px;
+        line-height:20px;
+        text-align:center;
+        letter-spacing:-0.01em;
+
+        transition:opacity 0.4s, transform 0.3s;
+    }
+
+    &.-exclusion {
+        @supports (mix-blend-mode:exclusion) {
+            mix-blend-mode:exclusion;
+        }
+
+        &:before {
+            @supports (mix-blend-mode:exclusion) {
+                background:white;
+            }
+        }
+    }
+
+    &.-normal {
+        mix-blend-mode:normal;
+
+        &:before {
+            background:currentColor;
+        }
+    }
+
+    &.-inverse {
+        color:white;
+    }
+
+    &.-visible {
+        &:before {
+            transform:scale(0.2);
+        }
+
+        &.-active:before {
+            transform:scale(0.23);
+            transition-duration:0.2s;
+        }
+    }
+
+    &.-pointer {
+        &:before {
+            transform:scale(0.15);
+        }
+    }
+
+    &.-text {
+        @extend .-normal;
+      
+        &:before {
+            opacity:0.85;
+            transform:scale(1.7);
+        }
+
+        #{$root} {
+            &-text {
+                opacity:1;
+                transform:scale(1);
+            }
+        }
+
+        &.-active:before {
+            transform:scale(1.6);
+            transition-duration:0.2s;
+        }
+    }
+
+    &.-opaque {
+        @extend .-exclusion;
+
+        &:before {
+            transform:scale(1.32);
+        }
+
+        &.-active:before {
+            transform:scale(1.2);
+        }
+    }
+
+    &.-lg {
+        &:before {
+            transform:scale(2);
+        }
+    }
+
+    &.-hidden {
+        display: none;
+        &:before {
+            transform:scale(0);
+        }
+    }
+}

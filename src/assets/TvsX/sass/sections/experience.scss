@@ -1,0 +1,99 @@
+section{
+    &.experience-section{
+        padding: 100px 80px;
+        gap: 48px;
+        background-color: #000;
+        .head-wrapper{
+            gap: 16px;
+            .heading{
+                gap: 24px;
+                @include phone{
+                    flex-direction: column;
+                }
+                img{
+                    width: 196px;
+height: 48px;
+
+                }
+
+            }
+            p{
+                color: #adadad;
+            }
+        }
+        .videos-wrapper{
+            height: 436px;
+            border-radius: 8px;
+            overflow: hidden;
+
+            .video-wrap{
+                display: none;
+                video{
+                    object-fit: cover;
+                }
+                .video-overlay{
+                    bottom: 0;
+                }
+                &.active{
+                    display: block;
+                }
+            }
+        }
+        .cards-wrapper{
+            gap: 24px;
+            @include phone{
+                flex-direction: column;
+            }
+            .card-wrap{
+                cursor: pointer;
+                gap: 8px;
+                width: 302px;
+                height: 156px;
+                
+                &.active{
+                   h6{
+                    opacity: 1;
+                   }
+                   p{
+                    opacity: 1;
+                    span{
+                       font-weight: 600; 
+                    }
+                   }
+                }
+                // &.active{
+                    h6{
+                      color: #fff;
+opacity: 0.5;
+transition: opacity 0.6s ease;
+                    }
+                    p{
+                        color: #adadad;
+                        opacity: 0.5;
+                        transition: opacity 0.6s ease;
+                        span{
+                            color: #fff;
+
+                        }
+                    }
+                // }
+                // h6{
+                //     color: #adadad;
+                // }
+                // p{ 
+                //     color: #adadad;
+                //   span{
+                //     font-weight: 600;
+                //   }  
+                // }
+
+                .range{
+                   bottom: 0;
+                   background-color: #343434; 
+                   height: 2px;
+                   width: 100%;
+                }
+            }
+        }
+    }
+}

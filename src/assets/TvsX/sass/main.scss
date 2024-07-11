@@ -1,0 +1,38 @@
+// sass --watch sass/main.scss:css/style.min.css --style compressed
+// sass % sass --watch main.scss css/output.css // run on assets/sass
+@import "atoms/_colors.scss";
+@import "atoms/_fonts.scss";
+@import "atoms/_reset.scss";
+@import "atoms/_spacing.scss";
+@import "atoms/_breakpoints.scss";
+@import "atoms/_theming.scss";
+@import "atoms/_typography.scss";
+@import "atoms/_keyframes.scss";
+@import "atoms/_animations.scss";
+@import "atoms/global.scss";
+
+// Main Elements
+@import "components/header.scss";
+@import "components/secondary-header.scss";
+@import "components/dropdown.scss";
+@import "components/button.scss";
+@import "components/scroller.scss";
+
+
+
+// Sections
+@import "sections/hero.scss";
+@import "sections/dna.scss";
+@import "sections/brain.scss";
+@import "sections/connected.scss";
+@import "sections/experience.scss";
+@import "sections/sample.scss";
+
+
+
+
+
+// Components
+
+
+

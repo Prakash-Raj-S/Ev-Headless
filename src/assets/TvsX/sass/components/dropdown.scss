@@ -1,0 +1,29 @@
+.dropdown-container {
+	
+    .dropdown-head{
+        cursor: pointer;
+        span{
+            // white-space: nowrap;
+        }
+        #dropdown-chevron{
+             transition: all 0.3s ease;
+            &.active{
+                transform: rotate(180deg);
+                 transition: all 0.3s ease;
+            }
+        }
+	
+}
+.select-dropdown-list{
+     background-color: #050707;;
+     width: max-content;
+     border-radius: 4px;
+     padding: 4px;
+     display: none;
+     &.active{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+     }
+}
+}
