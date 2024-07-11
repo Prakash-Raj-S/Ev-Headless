@@ -27,7 +27,43 @@ const VideoBanner = (props) => {
   const toggleMute = () => {
     setIsMuted(!isMuted);
   };
- 
+
+  const [newData, setNewData] = useState('');
+  const [cookievalue, setCookievalue] = useState('');
+  useEffect(() => {
+    // Function to get the value of a specific cookie by name
+    const getCookieValue = (name) => {
+      const nameEQ = name + '=';
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    };
+
+    // Read the cookie value
+    const value = getCookieValue('redisLogin');
+    setCookievalue(value);
+    console.log('cookie', value);
+  }, []);
+
+  useEffect(() => {
+    const fetchSessionData = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3001/get-session-data?key=${cookievalue}`
+        );
+        setSessionData(response.data.data);
+        console.log('Fetched session data:', response.data.data); // Log the fetched session data
+      } catch (error) {
+        console.error('Error fetching session data:', error);
+      }
+    };
+
+    fetchSessionData();
+  }, []);
   return (
     <section
       className="hero-section dark-themed position-relative d-flex justify-content-center align-items-center"
